@@ -1,0 +1,69 @@
+# declare variables
+wizard = "Wizard"
+wizard_hp = 70
+wizard_damage = 150
+human = "Human"
+human_hp = 150
+human_damage = 20
+elf = "Elf"
+elf_hp = 100
+elf_damange = 100
+dragon = "Dragon"
+dragon_hp = 300
+dragon_damage = 50
+
+# choose characters
+#print("1 = Wizard")
+#print("2 = Human")
+#print("3 = Elf ")
+
+#character = input("Choose your character ")
+#print("You have chosen " + character)
+
+while True:
+    print("1 = Wizard")
+    print("2 = Human")
+    print("3 = Elf")
+    character = input("Choose your character ")
+
+    if character == "1":
+        character = wizard
+        my_health = wizard_hp
+        my_damage = wizard_damage
+        break
+
+    elif character == "2":
+        character = human
+        my_health = human_hp
+        my_damage = human_damage
+        break
+
+    elif character == "3":
+        character = elf
+        my_health = elf_hp
+        my_damage = elf_damange
+        break
+
+    else:
+        print("Invalid Character")
+
+print("You have chosen " + character)
+print("Health = " + str(my_health))
+print("Damage = " + str(my_damage))
+
+# dragonbattle!!!
+print("You Encounter a Dragon")
+print("Begin Battle!")
+while True:
+    dragon_hp = dragon_hp - my_damage
+    print("The " + character + " strikes the dragon")
+    print("The Dragon's hp is " + str(dragon_hp) + "!")
+    if dragon_hp <= 0:
+        print("The Dragon has been slain")
+        break
+    my_health = my_health - dragon_damage
+    print("The Dragons fire burns you")
+    print("Your hp is " + str(my_health) + "!")
+    if my_health <= 0:
+        print("You have been slain")
+        break
